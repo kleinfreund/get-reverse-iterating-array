@@ -56,9 +56,12 @@ test('Array iterator returns iterator itself', t => {
 test('throws an error for incompatible types', t => {
   const set = new Set([5, 4, 1, 2, 3]);
 
-  const error = t.throws(() => {
-    getReverseIteratingArray(set);
-  }, TypeError);
+  const error = t.throws(
+    () => {
+      getReverseIteratingArray(set);
+    },
+    { instanceOf: TypeError }
+  );
 
   t.is(error.message, 'Expected “array” parameter to be of type “array” but got object.');
 });
