@@ -58,6 +58,7 @@ test('throws an error for incompatible types', t => {
 
   const error = t.throws(
     () => {
+      // @ts-ignore because the TypeScript error for an invalid argument is expected.
       getReverseIteratingArray(set);
     },
     { instanceOf: TypeError }
