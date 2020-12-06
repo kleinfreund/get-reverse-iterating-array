@@ -1,5 +1,5 @@
 import test from 'ava';
-import getReverseIteratingArray from '../src/get-reverse-iterating-array';
+import getReverseIteratingArray from './get-reverse-iterating-array';
 
 test('accepts an empty array as a parameter', t => {
   const reverseIteratingArray = getReverseIteratingArray([]);
