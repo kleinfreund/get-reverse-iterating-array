@@ -1,6 +1,6 @@
 {
   "name": "get-reverse-iterating-array",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
   "description": "A lightweight proxy function reversing an array’s default iteration direction",
   "author": {
