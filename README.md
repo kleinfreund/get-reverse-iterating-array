@@ -1,8 +1,10 @@
 # get-reverse-iterating-array
 
-This function reverses an array’s default iteration direction. By default, the [iteration protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) are defined to iterate on an iterable object’s elements according to their insertion order.
+A function returning an array whose iteration direction is reversed without affecting the original array or affecting the iteration direction of any other arrays.
 
-The function `getReverseIteratingArray` returns a new [`Proxy`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) object with the array as its target. The array’s `[Symbol.iterator]` property is trapped in order to define custom iteration behaviour. This has the advantage of not changing the implementation of [`Array.prototype[Symbol.iterator]`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator) directly which would cause the iteration direction of _all_ arrays to be reversed. Using a proxy also avoids unnecessarily copying an array for reverse iteration like [`Array.prototype.reverse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse) would.
+By default, the [iteration protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) are defined to iterate on an iterable object’s elements according to their insertion order.
+
+The function `getReverseIteratingArray` returns a new [`Proxy`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) object with the array being its target. The array’s `[Symbol.iterator]` property is trapped in order to define custom iteration behaviour. This has the advantage of not changing the implementation of [`Array.prototype[Symbol.iterator]`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator) directly which would cause the iteration direction of _all_ arrays to be reversed. Using a proxy also avoids unnecessarily copying an array for reverse iteration like [`Array.prototype.reverse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse) would.
 
 If you require to iterate over an array in _both_ forwards and backwards direction, have a look at [`ReverseIterableArray`](https://www.npmjs.com/package/reverse-iterable-array).
 
@@ -21,64 +23,29 @@ See also:
 
 ## Table of contents
 
-- [Installation & usage](#installation--usage)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Examples](#examples)
 - [Tests](#tests)
 - [Documentation](#documentation)
 
 
 
-## Installation & usage
-
-### Browser
-
-Download the ES module file …
+## Installation
 
 ```sh
-curl -O https://raw.githubusercontent.com/kleinfreund/get-reverse-iterating-array/main/dist/esm/get-reverse-iterating-array.mjs
+npm install get-reverse-iterating-array
 ```
 
-… and import it like this:
+
+
+## Usage
 
 ```js
-import getReverseIteratingArray from 'get-reverse-iterating-array.mjs';
+import getReverseIteratingArray from 'get-reverse-iterating-array';
 
 const array = getReverseIteratingArray([1, 2, 3]);
 ```
-
-### Node
-
-Install the node package as a dependency …
-
-```sh
-npm install --save get-reverse-iterating-array
-```
-
-… and import it like this:
-
-- CommonJS module
-
-  ```node
-  const getReverseIteratingArray = require('get-reverse-iterating-array').default;
-
-  const array = getReverseIteratingArray([1, 2, 3]);
-  ```
-
-- ES module
-
-  ```js
-  import getReverseIteratingArray from 'get-reverse-iterating-array/dist/esm/get-reverse-iterating-array.mjs';
-
-  const array = getReverseIteratingArray([1, 2, 3]);
-  ```
-
-- TypeScript module
-
-  ```ts
-  import getReverseIteratingArray from 'get-reverse-iterating-array/src/get-reverse-iterating-array';
-
-  const array = getReverseIteratingArray([1, 2, 3]);
-  ```
 
 
 
@@ -87,7 +54,9 @@ npm install --save get-reverse-iterating-array
 For some live usage examples, clone the repository and run the following:
 
 ```sh
-npm install && npm run examples
+npm install
+npm run build
+npm start
 ```
 
 Then, open [localhost:8080/examples](http://127.0.0.1:8080/examples) in a browser.
@@ -99,7 +68,8 @@ Then, open [localhost:8080/examples](http://127.0.0.1:8080/examples) in a browse
 In order to run the tests, clone the repository and run the following:
 
 ```sh
-npm install && npm test
+npm install
+npm test
 ```
 
 

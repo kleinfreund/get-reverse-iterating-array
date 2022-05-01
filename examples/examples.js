@@ -1,17 +1,19 @@
-import getReverseIteratingArray from '../dist/esm/get-reverse-iterating-array.mjs';
+import getReverseIteratingArray from '../dist/get-reverse-iterating-array.js';
+
+Object.defineProperty(window, 'getReverseIteratingArray', { value: getReverseIteratingArray });
 
 /**
- * @param {String} command
+ * @param {string} command
  */
 function printCommand(command) {
   printCodeBlock(command, 'command');
 }
 
 /**
- * @param {Array} args
+ * @param {any[]} args
  */
 function printOutput(...args) {
-  const output = args.map(arg => stringify(arg));
+  const output = args.map((arg) => stringify(arg));
   printCodeBlock(output.join(' '), 'output');
 }
 
@@ -47,7 +49,7 @@ function printCodeBlock(content, ...classNames) {
  */
 function stringify(input) {
   if (Array.isArray(input)) {
-    return `[ ${input.map(element => stringify(element)).join(', ')} ]`;
+    return `[ ${input.map((element) => stringify(element)).join(', ')} ]`;
   } else if (typeof input === 'string') {
     return `"${input}"`;
   }
@@ -59,23 +61,22 @@ function printExamples() {
   printCommand('const regularIteratingArray = [5, 4, 1, 2, 3];')
   const regularIteratingArray = [5, 4, 1, 2, 3];
   printOutput(regularIteratingArray);
+  printCommand('Array.from(regularIteratingArray)');
+  printOutput(Array.from(regularIteratingArray));
 
   printCommand('const reverseIteratingArray = getReverseIteratingArray([5, 4, 1, 2, 3]);')
   const reverseIteratingArray = getReverseIteratingArray([5, 4, 1, 2, 3]);
   printOutput(reverseIteratingArray);
-
-  printCommand('Array.from(regularIteratingArray)');
-  printOutput(Array.from(regularIteratingArray));
   printCommand('Array.from(reverseIteratingArray)');
   printOutput(Array.from(reverseIteratingArray));
 
   printCommand('regularIteratingArray.sort((a, b) => b - a)');
   printOutput(regularIteratingArray.sort((a, b) => b - a));
-  printCommand('reverseIteratingArray.sort((a, b) => b - a)');
-  printOutput(reverseIteratingArray.sort((a, b) => b - a));
-
   printCommand('Array.from(regularIteratingArray)');
   printOutput(Array.from(regularIteratingArray));
+
+  printCommand('reverseIteratingArray.sort((a, b) => b - a)');
+  printOutput(reverseIteratingArray.sort((a, b) => b - a));
   printCommand('Array.from(reverseIteratingArray)');
   printOutput(Array.from(reverseIteratingArray));
 }
