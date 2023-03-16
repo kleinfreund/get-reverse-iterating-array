@@ -3,7 +3,7 @@ export default function getReverseIteratingArray(array: any[]): any[] {
     return new Proxy(array, handler)
   }
 
-  throw new TypeError(`Expected “array” parameter to be of type “array” but got ${typeof array}.`)
+  throw new TypeError(`Expected “array” parameter to be an array (got “${typeof array}”).`)
 }
 
 const handler: ProxyHandler<any[]> = {

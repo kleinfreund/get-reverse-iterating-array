@@ -61,6 +61,6 @@ describe('getReverseIteratingArray', () => {
       getReverseIteratingArray(set)
     }
 
-    expect(callback).toThrow('Expected “array” parameter to be of type “array” but got object.')
+    expect(callback).toThrow('Expected “array” parameter to be an array (got “object”).')
   })
 })
