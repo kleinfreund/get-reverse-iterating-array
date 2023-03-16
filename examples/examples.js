@@ -1,20 +1,20 @@
-import getReverseIteratingArray from '../dist/get-reverse-iterating-array.js';
+import getReverseIteratingArray from '../dist/get-reverse-iterating-array.js'
 
-Object.defineProperty(window, 'getReverseIteratingArray', { value: getReverseIteratingArray });
+Object.defineProperty(window, 'getReverseIteratingArray', { value: getReverseIteratingArray })
 
 /**
  * @param {string} command
  */
 function printCommand(command) {
-  printCodeBlock(command, 'command');
+  printCodeBlock(command, 'command')
 }
 
 /**
  * @param {any[]} args
  */
 function printOutput(...args) {
-  const output = args.map((arg) => stringify(arg));
-  printCodeBlock(output.join(' '), 'output');
+  const output = args.map((arg) => stringify(arg))
+  printCodeBlock(output.join(' '), 'output')
 }
 
 /**
@@ -22,15 +22,15 @@ function printOutput(...args) {
  * @param {string[]} classNames
  */
 function printCodeBlock(content, ...classNames) {
-  let concatenatedLines = '';
+  let concatenatedLines = ''
   for (const line of content.trim().split('\n')) {
-    concatenatedLines += `<code>${line}</code>\n`;
+    concatenatedLines += `<code>${line}</code>\n`
   }
 
   document.body.insertAdjacentHTML(
     'beforeend',
     `<pre class="${classNames.join(' ')}">${concatenatedLines}</pre>`
-  );
+  )
 }
 
 /**
@@ -49,36 +49,36 @@ function printCodeBlock(content, ...classNames) {
  */
 function stringify(input) {
   if (Array.isArray(input)) {
-    return `[ ${input.map((element) => stringify(element)).join(', ')} ]`;
+    return `[ ${input.map((element) => stringify(element)).join(', ')} ]`
   } else if (typeof input === 'string') {
-    return `"${input}"`;
+    return `"${input}"`
   }
 
-  return String(input);
+  return String(input)
 }
 
 function printExamples() {
-  printCommand('const regularIteratingArray = [5, 4, 1, 2, 3];')
-  const regularIteratingArray = [5, 4, 1, 2, 3];
-  printOutput(regularIteratingArray);
-  printCommand('Array.from(regularIteratingArray)');
-  printOutput(Array.from(regularIteratingArray));
+  printCommand('const regularIteratingArray = [5, 4, 1, 2, 3]')
+  const regularIteratingArray = [5, 4, 1, 2, 3]
+  printOutput(regularIteratingArray)
+  printCommand('Array.from(regularIteratingArray)')
+  printOutput(Array.from(regularIteratingArray))
 
-  printCommand('const reverseIteratingArray = getReverseIteratingArray([5, 4, 1, 2, 3]);')
-  const reverseIteratingArray = getReverseIteratingArray([5, 4, 1, 2, 3]);
-  printOutput(reverseIteratingArray);
-  printCommand('Array.from(reverseIteratingArray)');
-  printOutput(Array.from(reverseIteratingArray));
+  printCommand('const reverseIteratingArray = getReverseIteratingArray([5, 4, 1, 2, 3])')
+  const reverseIteratingArray = getReverseIteratingArray([5, 4, 1, 2, 3])
+  printOutput(reverseIteratingArray)
+  printCommand('Array.from(reverseIteratingArray)')
+  printOutput(Array.from(reverseIteratingArray))
 
-  printCommand('regularIteratingArray.sort((a, b) => b - a)');
-  printOutput(regularIteratingArray.sort((a, b) => b - a));
-  printCommand('Array.from(regularIteratingArray)');
-  printOutput(Array.from(regularIteratingArray));
+  printCommand('regularIteratingArray.sort((a, b) => b - a)')
+  printOutput(regularIteratingArray.sort((a, b) => b - a))
+  printCommand('Array.from(regularIteratingArray)')
+  printOutput(Array.from(regularIteratingArray))
 
-  printCommand('reverseIteratingArray.sort((a, b) => b - a)');
-  printOutput(reverseIteratingArray.sort((a, b) => b - a));
-  printCommand('Array.from(reverseIteratingArray)');
-  printOutput(Array.from(reverseIteratingArray));
+  printCommand('reverseIteratingArray.sort((a, b) => b - a)')
+  printOutput(reverseIteratingArray.sort((a, b) => b - a))
+  printCommand('Array.from(reverseIteratingArray)')
+  printOutput(Array.from(reverseIteratingArray))
 }
 
-printExamples();
+printExamples()
