@@ -1,38 +1,38 @@
 export default function getReverseIteratingArray(array: any[]): any[] {
-  if (Array.isArray(array)) {
-    return new Proxy(array, handler)
-  }
+	if (Array.isArray(array)) {
+		return new Proxy(array, handler)
+	}
 
-  throw new TypeError(`Expected “array” parameter to be an array (got “${typeof array}”).`)
+	throw new TypeError(`Expected “array” parameter to be an array (got “${typeof array}”).`)
 }
 
 const handler: ProxyHandler<any[]> = {
-  get(targetArray: any[], key: string | number | symbol) {
-    if (key === Symbol.iterator) {
-      return reverseIteratorForArray.bind(targetArray)
-    }
+	get(targetArray: any[], key: string | number | symbol) {
+		if (key === Symbol.iterator) {
+			return reverseIteratorForArray.bind(targetArray)
+		}
 
-    return Reflect.get(targetArray, key)
-  }
+		return Reflect.get(targetArray, key)
+	}
 }
 
 function reverseIteratorForArray(this: any[]): IterableIterator<any> {
-  let currentIndex = this.length - 1
+	let currentIndex = this.length - 1
 
-  return {
-    [Symbol.iterator](): IterableIterator<any> {
-      // Return the iterable itself.
-      return this
-    },
+	return {
+		[Symbol.iterator](): IterableIterator<any> {
+			// Return the iterable itself.
+			return this
+		},
 
-    next: (): IteratorResult<any> => {
-      const value = this[currentIndex]
-      currentIndex -= 1
+		next: (): IteratorResult<any> => {
+			const value = this[currentIndex]
+			currentIndex -= 1
 
-      return {
-        value,
-        done: value === undefined
-      }
-    }
-  }
+			return {
+				value,
+				done: value === undefined
+			}
+		}
+	}
 }

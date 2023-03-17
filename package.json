@@ -1,52 +1,52 @@
 {
-  "name": "get-reverse-iterating-array",
-  "version": "2.0.0",
-  "license": "MIT",
-  "description": "A lightweight proxy function reversing an array’s default iteration direction",
-  "author": {
-    "name": "Philipp Rudloff",
-    "url": "https://kleinfreund.de"
-  },
-  "homepage": "https://github.com/kleinfreund/get-reverse-iterating-array",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kleinfreund/get-reverse-iterating-array.git"
-  },
-  "bugs": {
-    "url": "https://github.com/kleinfreund/get-reverse-iterating-array/issues"
-  },
-  "keywords": [
-    "array",
-    "proxy",
-    "reverse-iterating",
-    "iterable",
-    "iterator"
-  ],
-  "type": "module",
-  "exports": "./dist/get-reverse-iterating-array.js",
-  "main": "./dist/get-reverse-iterating-array.js",
-  "module": "./dist/get-reverse-iterating-array.js",
-  "sideEffects": false,
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "rollup --config",
-    "test": "jest",
-    "start": "http-server",
-    "prebuild": "npm run test",
-    "prepublishOnly": "npm run test"
-  },
-  "devDependencies": {
-    "@rollup/plugin-terser": "^0.4.0",
-    "@rollup/plugin-typescript": "^11.0.0",
-    "@types/jest": "^29.5.0",
-    "http-server": "^14.1.1",
-    "jest": "^29.5.0",
-    "jest-environment-jsdom": "^29.5.0",
-    "rollup": "^3.19.1",
-    "ts-jest": "^29.0.5",
-    "tslib": "^2.5.0",
-    "typescript": "^5.0.2"
-  }
+	"name": "get-reverse-iterating-array",
+	"version": "2.0.0",
+	"license": "MIT",
+	"description": "A lightweight proxy function reversing an array’s default iteration direction",
+	"author": {
+		"name": "Philipp Rudloff",
+		"url": "https://kleinfreund.de"
+	},
+	"homepage": "https://github.com/kleinfreund/get-reverse-iterating-array",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kleinfreund/get-reverse-iterating-array.git"
+	},
+	"bugs": {
+		"url": "https://github.com/kleinfreund/get-reverse-iterating-array/issues"
+	},
+	"keywords": [
+		"array",
+		"proxy",
+		"reverse-iterating",
+		"iterable",
+		"iterator"
+	],
+	"type": "module",
+	"exports": "./dist/get-reverse-iterating-array.js",
+	"main": "./dist/get-reverse-iterating-array.js",
+	"module": "./dist/get-reverse-iterating-array.js",
+	"sideEffects": false,
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "rollup --config",
+		"test": "jest",
+		"start": "http-server",
+		"prebuild": "npm run test",
+		"prepublishOnly": "npm run test"
+	},
+	"devDependencies": {
+		"@rollup/plugin-terser": "^0.4.0",
+		"@rollup/plugin-typescript": "^11.0.0",
+		"@types/jest": "^29.5.0",
+		"http-server": "^14.1.1",
+		"jest": "^29.5.0",
+		"jest-environment-jsdom": "^29.5.0",
+		"rollup": "^3.19.1",
+		"ts-jest": "^29.0.5",
+		"tslib": "^2.5.0",
+		"typescript": "^5.0.2"
+	}
 }

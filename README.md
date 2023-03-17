@@ -19,8 +19,6 @@ See also:
 - `ReverseIterableMap`: [reverse-iterable-map](https://www.npmjs.com/package/reverse-iterable-map)
 - `ReverseIterableSet`: [reverse-iterable-set](https://www.npmjs.com/package/reverse-iterable-set)
 
-
-
 ## Table of contents
 
 - [Installation](#installation)
@@ -29,15 +27,11 @@ See also:
 - [Tests](#tests)
 - [Documentation](#documentation)
 
-
-
 ## Installation
 
 ```sh
 npm install get-reverse-iterating-array
 ```
-
-
 
 ## Usage
 
@@ -46,8 +40,6 @@ import getReverseIteratingArray from 'get-reverse-iterating-array';
 
 const array = getReverseIteratingArray([1, 2, 3]);
 ```
-
-
 
 ## Examples
 
@@ -61,8 +53,6 @@ npm start
 
 Then, open [localhost:8080/examples](http://127.0.0.1:8080/examples) in a browser.
 
-
-
 ## Tests
 
 In order to run the tests, clone the repository and run the following:
@@ -71,8 +61,6 @@ In order to run the tests, clone the repository and run the following:
 npm install
 npm test
 ```
-
-
 
 ## Documentation
 
@@ -86,34 +74,34 @@ The returned object will behave like a regular built-in array with the exception
 
 - [`for..of` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
 
-  ```js
-  for (const element of reverseIteratingArray) {
-    console.log(element)
-  }
-  //> 3
-  //> 2
-  //> 1
-  //> 4
-  //> 5
-  ```
+	```js
+	for (const element of reverseIteratingArray) {
+		console.log(element)
+	}
+	//> 3
+	//> 2
+	//> 1
+	//> 4
+	//> 5
+	```
 
 - [spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 
-  ```js
-  [...reverseIteratingArray];
-  //> [ 3, 2, 1, 4, 5 ]
-  ```
+	```js
+	[...reverseIteratingArray];
+	//> [ 3, 2, 1, 4, 5 ]
+	```
 
 - [`Array.from()` method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
 
-  ```js
-  Array.from(reverseIteratingArray);
-  //> [ 3, 2, 1, 4, 5 ]
-  ```
+	```js
+	Array.from(reverseIteratingArray);
+	//> [ 3, 2, 1, 4, 5 ]
+	```
 
 - [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
-  ```js
-  const [a, b, c, d, e] = reverseIteratingArray
-  //> a = 3, b = 2, c = 1, d = 4, e = 5
-  ```
+	```js
+	const [a, b, c, d, e] = reverseIteratingArray
+	//> a = 3, b = 2, c = 1, d = 4, e = 5
+	```
