@@ -1,8 +1,11 @@
-import getReverseIteratingArray from './get-reverse-iterating-array'
+import { describe, expect, test } from 'vitest'
+
+import getReverseIteratingArray from './get-reverse-iterating-array.js'
 
 describe('getReverseIteratingArray', () => {
 	test('accepts an empty array as a parameter', () => {
-		const reverseIteratingArray = getReverseIteratingArray([])
+		/** @type {any[]} */ const array = []
+		const reverseIteratingArray = getReverseIteratingArray(array)
 		expect(reverseIteratingArray.length).toBe(0)
 	})
 
