@@ -23,13 +23,21 @@
 		"iterator"
 	],
 	"type": "module",
-	"exports": "./dist/get-reverse-iterating-array.js",
+	"exports": {
+		".": {
+			"types": "./types/index.d.ts",
+			"default": "./dist/get-reverse-iterating-array.js"
+		},
+		"./types/index.d.ts": "./types/index.d.ts"
+	},
 	"main": "./dist/get-reverse-iterating-array.js",
 	"module": "./dist/get-reverse-iterating-array.js",
-	"sideEffects": false,
+	"types": "./types/index.d.ts",
 	"files": [
-		"dist"
+		"dist",
+		"types"
 	],
+	"sideEffects": false,
 	"scripts": {
 		"build": "rollup --config",
 		"test": "vitest run --coverage",
